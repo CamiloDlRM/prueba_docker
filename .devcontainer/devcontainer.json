@@ -1,0 +1,13 @@
+{
+    name: prueba_docker,
+    dockerFile: .devcontainer/Dockerfile,   
+    appPort: [5000],    
+    settings: {
+        python.pythonPath: /app/prueba_docker/venv/bin/python3
+    },
+    extensions: [
+        ms-python.python,
+        ms-azuretools.vscode-docker
+    ],
+    remoteUser: root
+}
