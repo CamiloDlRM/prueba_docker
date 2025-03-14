@@ -2,7 +2,7 @@
   "name": "Python Development",
   "build": {
     "dockerfile": "Dockerfile",
-    "context": "."
+    "context": ".."
   },
   "customizations": {
     "vscode": {
@@ -22,13 +22,9 @@
     }
   },
   "remoteUser": "root",
-  "workspaceFolder": "/app",
+  "workspaceFolder": "/prueba",
   "mounts": [
-    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
-  ],
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/root/.ssh/ssh-agent.sock"
-  },
-  "postCreateCommand": "ssh-keyscan github.com >> ~/.ssh/known_hosts && venv/bin/pip install pylint black",
-  "forwardPorts": []
+    "source=${localWorkspaceFolder}/loco,target=/prueba/src,type=bind,consistency=cached"
+  ]
+
 }
