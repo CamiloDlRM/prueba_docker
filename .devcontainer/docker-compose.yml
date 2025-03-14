@@ -16,7 +16,7 @@ services:
   python_service:
     build: 
       context: ..
-      dockerfile: C:/Users/camil/prueba_docker/.devcontainer/Dockerfile
+      dockerfile: D:\prueba_docker\.devcontainer\Dockerfile
     container_name: app_container
     networks:
       - develop
