@@ -1,30 +1,19 @@
 {
   "name": "Python Development",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
+  "dockerComposeFile": "docker-compose.yml",  // Especifica el archivo docker-compose.yml
+  "service": "python_service",               // Define el servicio principal
+  "workspaceFolder": "/prueba",                 // Carpeta de trabajo dentro del contenedor
+  "shutdownAction": "stopCompose",           // Detener docker-compose al cerrar VS Code
+  "remoteUser": "root",                      // Usuario dentro del contenedor
   "customizations": {
     "vscode": {
-      "extensions": [
+      "extensions": [                        // Extensiones de VS Code
         "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-azuretools.vscode-docker"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "/app/venv/bin/python",
-        "python.linting.enabled": true,
-        "python.linting.pylintEnabled": true,
-        "python.formatting.provider": "black",
-        "editor.formatOnSave": true,
-        "terminal.integrated.defaultProfile.linux": "bash"
-      }
+        "ms-python.vscode-pylance"
+      ]
     }
   },
-  "remoteUser": "root",
-  "workspaceFolder": "/prueba",
-  "mounts": [
+  "mounts": [                                // Montajes de volúmenes
     "source=${localWorkspaceFolder}/loco,target=/prueba/src,type=bind,consistency=cached"
   ]
-
 }

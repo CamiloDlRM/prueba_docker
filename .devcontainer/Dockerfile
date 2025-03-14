@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 # Instalar dependencias
-RUN apt-get update && apt-get install -y     python3     python3-pip     python3-venv     git     && apt-get clean     && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y     python3     python3-pip     python3-venv     git    postgresql   postgresql-contrib    && apt-get clean     && rm -rf /var/lib/apt/lists/*
 
 # Crear directorio de trabajo
 WORKDIR /app
